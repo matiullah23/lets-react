@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="main2.css">
+  <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+  <!-- React DOM Library -->
+  <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+  <!-- Babel Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+
+
+  <title>Class Components</title>
+</head>
+
+<body>
+  <!-- Designated Location to Insert React Content -->
+
+<div id="app">React has not rendered yet</div>
+  <!-- JavaScript -->
+
+<script type="text/babel">
+
+  class Shapes extends React.Component {
+    render() {
+      return(
+        <h1>Circle, Square, Rectangle</h1>
+      )
+    }
+  }
+
+  class Circle extends React.Component {
+    render() {
+      return(
+        <h1 className="Circle">Circle</h1>
+      )
+    }
+  }
+
+  class Square extends React.Component {
+    render() {
+      return(
+        <h1 className="Square">Square</h1>
+      )
+    }
+  }
+
+  class Rectangle extends React.Component {
+    render() {
+      return(
+        <h1 className="Rectangle">Rectangle</h1>
+      )
+    }
+  }
+
+  ReactDOM.render(
+    <div>
+      <Circle/>
+      <Square/>
+      <Rectangle/>
+    </div>,
+    document.getElementById("app")
+  );
+
+</script>
+
+</body>
+</html>
