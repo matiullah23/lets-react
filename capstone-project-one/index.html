@@ -11,6 +11,8 @@
   <!-- Babel Library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
   <title>FriendLy</title>
+  <!-- Font Awesome Library -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
   <div id="app">React has not rendered yet</div>
@@ -21,17 +23,71 @@
 
     // FriendLy Complex Component
 
+    function FriendLy () {
+      return (
+        <div>
+          <Avatar/>
+          <UserName/>
+          <GetConnected/>
+        </div>
+      );
+    }
+
     // Avatar Component
+
+    function Avatar() {
+      return(
+        <img src="https://media.licdn.com/dms/image/C4D03AQG0L5So1q1DsA/profile-displayphoto-shrink_200_200/0?e=1540425600&v=beta&t=FCE7ogb1i8Xwd9PhLEwux1QVW6lGKkw2NYhkEOgwQE4" alt="profile pic"/>
+      )
+
+    }
 
     // UserName Component
 
-    // GetConnected Complex Component
+    function UserName() {
+      return(
+        <h1>Profile Name</h1>
+      );
+    }
 
+    // GetConnected Complex Component
+    function GetConnected() {
+      return(
+        <div>
+          <Like/>
+          <Share/>
+          <Add/>
+        </div>
+      );
+    }
       //Like Component
+      function Like() {
+        return(
+          <i className="fa fa-thumbs-o-up" aria-hidden="true"></i>
+
+
+        )
+      }
 
       //Share Component
+      function Share() {
+        return (
+          <i className="fa fa-share"></i>
+
+
+        )
+      }
+
 
       //Add Component
+      function Add() {
+        return(
+          <i className="fa fa-users" aria-hidden="true"></i>
+
+
+        );
+      }
+
 
     ReactDOM.render(
       <FriendLy/>,
