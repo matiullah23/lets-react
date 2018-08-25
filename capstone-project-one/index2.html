@@ -23,8 +23,10 @@
 
     // FriendLy Complex Component
 
-    function FriendLy () {
+    function FriendLy (props) {
       var friendLyStyle = {
+        display: 'inline-block',
+        margin: 20,
         height: 300,
         width: 200,
         padding: 0,
@@ -34,8 +36,8 @@
       }
       return (
         <div style={friendLyStyle}>
-          <Avatar/>
-          <UserName/>
+          <Avatar img={props.img}/>
+          <UserName name={props.name}/>
           <GetConnected/>
         </div>
       );
@@ -43,37 +45,41 @@
 
     // Avatar Component
 
-    function Avatar() {
+    function Avatar(props) {
       var avatarStyle = {
-        marginLeft: 20,
+        marginLeft: 27,
         marginTop: 20,
         width: 150,
         height: 150,
         borderRadius: "50%"
       }
       return(
-        <img src="https://media.licdn.com/dms/image/C4D03AQG0L5So1q1DsA/profile-displayphoto-shrink_200_200/0?e=1540425600&v=beta&t=FCE7ogb1i8Xwd9PhLEwux1QVW6lGKkw2NYhkEOgwQE4" alt="profile pic" style={avatarStyle}/>
+        <img src={props.img} alt="profile pic" style={avatarStyle}/>
       )
 
     }
 
     // UserName Component
 
-    function UserName() {
+    function UserName(props) {
       var nameStyle = {
         fontSize: 24,
+        textAlign: "center",
         fontFamily: "Arial, Helvetica, sans-serif",
         margin: 20
       }
       return(
-        <h1 style={nameStyle}>Profile Name</h1>
+        <h1 style={nameStyle}>{props.name}</h1>
       );
     }
 
     // GetConnected Complex Component
     function GetConnected() {
+      var getConnectedStyle = {
+        marginLeft: 15
+      }
       return(
-        <div>
+        <div style={getConnectedStyle}>
           <Like/>
           <Share/>
           <Add/>
@@ -113,9 +119,44 @@
         );
       }
 
+    // Challenge - Mass produce individual FriendLy cards using props
+    // Challenge 1 - Use props to pass the name of the person from ReactDOM.render() method to parent FriendLy
+    // component to child UserName component
+
 
     ReactDOM.render(
-      <FriendLy/>,
+      <div>
+        <FriendLy
+        name="Matiullah"
+        img="https://media.licdn.com/dms/image/C4D03AQG0L5So1q1DsA/profile-displayphoto-shrink_200_200/0?e=1540425600&v=beta&t=FCE7ogb1i8Xwd9PhLEwux1QVW6lGKkw2NYhkEOgwQE4"/>
+        <FriendLy
+        name="Kobe"
+        img="http://images.hastedkraeutler.com/www_hastedkraeutler_com/ms_kobe_bryant_09_hr0.jpg"/>
+        <FriendLy
+        name="Tim"
+        img="https://res.cloudinary.com/allamerican/image/fetch/t_face_s270/https://speakerdata2.s3.amazonaws.com/photo/image/2717/tim-duncan-1.jpg"/>
+        <FriendLy
+        name="Steve"
+        img="https://asiasociety.org/files/uploads/286images/Nash%20pic.jpg"/>
+        <FriendLy
+        name="Dwayne"
+        img="http://www.eurweb.com/wp-content/uploads/2014/09/Dwyane-Wade1-e1411745228817.jpg"/>
+        <FriendLy
+        name="Carmelo"
+        img="http://www.chicagonow.com/load-o-bull/files/2011/06/meloknicksunishort.jpg"/>
+        <FriendLy
+        name="Tim"
+        img="https://res.cloudinary.com/allamerican/image/fetch/t_face_s270/https://speakerdata2.s3.amazonaws.com/photo/image/2717/tim-duncan-1.jpg"/>
+        <FriendLy
+        name="Steve"
+        img="https://asiasociety.org/files/uploads/286images/Nash%20pic.jpg"/>
+        <FriendLy
+        name="Dwayne"
+        img="http://www.eurweb.com/wp-content/uploads/2014/09/Dwyane-Wade1-e1411745228817.jpg"/>
+        <FriendLy
+        name="Carmelo"
+        img="http://www.chicagonow.com/load-o-bull/files/2011/06/meloknicksunishort.jpg"/>
+      </div>,
       document.getElementById("app")
     );
 
